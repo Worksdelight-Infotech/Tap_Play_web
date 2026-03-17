@@ -1,11 +1,19 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+
+function Home() {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <h1>Tap and Play</h1>
+    </div>
+  );
+}
 
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      <Route path="/" element={<Navigate to="/privacy-policy" replace />} />
     </Routes>
   );
 }
